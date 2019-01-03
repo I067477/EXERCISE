@@ -1,0 +1,10 @@
+{ 
+  "role":{ 
+    "name":"HandsOnProject.HandsOnDB.roles::access", 
+    "schema_privileges":[ 
+      { 
+        "privileges":[ "SELECT" ] 
+      } 
+    ]
+  } 
+}

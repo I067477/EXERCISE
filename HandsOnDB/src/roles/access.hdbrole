@@ -1,0 +1,11 @@
+{ 
+  "role":{ 
+    "name":"HandsOnProject.HandsOnDB.roles::access_grant#", 
+    "schema_privileges":[ 
+      { 
+      "privileges":[ "SELECT" ],
+        "privileges_with_grant_option":[ "UPDATE" ] 
+      } 
+    ]
+  } 
+}

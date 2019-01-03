@@ -1,0 +1,40 @@
+ID: HandsOnProject
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: HandsOnDB
+   type: hdb
+   path: HandsOnDB
+   requires:
+    - name: hdi_HandsOnDB
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+
+
+
+    - name: cross-container-service-1
+      group: SERVICE_REPLACEMENTS
+
+      properties:
+        key: ServiceName_1
+        service: ~{the-service-name}
+                          
+
+
+resources:
+ - name: hdi_HandsOnDB
+   parameters:
+      config:
+         schema: HANDSON
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: cross-container-service-1
+   parameters:
+      service-name: CHICKEN_WINGS_UPS
+   properties:
+      the-service-name: ${service-name}
+   type: org.cloudfoundry.existing-service
+
